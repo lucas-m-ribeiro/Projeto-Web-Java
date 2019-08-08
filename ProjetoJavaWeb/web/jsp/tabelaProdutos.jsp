@@ -25,7 +25,6 @@
                 <button type="submit" class="btn btn-success">Pesquisar</button>
                 <a type="button" class="btn btn-success" href="/jsp/cadastroProdutos.jsp">Novo produto</a>
             </form>
-            
             <fildset>
                 <legend class='mt-5'><strong>Lista de produtos cadastrados</strong></legend>
                 <table aling="center" border="2px" width="80%">
@@ -53,7 +52,7 @@
                         <th><%=lista.get(i).getPreco_produto()%></th>
                         
                         <th><a href='/jsp/alterarProdutos.jsp?codigo=<%=lista.get(i).getCodigo_produto()%>"&descricao=<%=lista.get(i).getDescricao_produto()%>"&quantidade=<%=lista.get(i).getQuantidade_produto()%>"&preco=<%=lista.get(i).getPreco_produto()%>"'>Alterar</a></th>
-                        <th><a href='excluir.jsp?codigo=<%=lista.get(i).getCodigo_produto()%>"&descricao=<%=lista.get(i).getDescricao_produto()%>"'>Excluir</a></th>
+                        <th><a href='/jsp/excluir.jsp?codigo=<%=lista.get(i).getCodigo_produto()%>"&descricao=<%=lista.get(i).getDescricao_produto()%>"'>Excluir</a></th>
                         <th><a href='/jsp/compra.jsp?codigo=<%=lista.get(i).getCodigo_produto()%>"&quantidade=<%=lista.get(i).getQuantidade_produto()%>'>Comprar</a></th>
                     </tr>
                     <%
