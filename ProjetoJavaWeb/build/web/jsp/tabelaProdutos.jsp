@@ -45,7 +45,6 @@
                             ArrayList<Produto> lista = prd.listarTodos();
                             
                             for(int i = 0; i < lista.size(); i++){
-                                System.out.println("Quantidade : "+ lista.get(i).getQuantidade_produto());
                     %>
                     <tr>
                         <th><%=lista.get(i).getCodigo_produto()%></th>

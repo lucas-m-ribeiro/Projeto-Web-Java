@@ -11,7 +11,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.List;
 import model.Compra;
+import model.ItemComprado;
 import model.Produto;
 
 /**
@@ -129,8 +131,6 @@ public class ProdutoDaoImpl implements ProdutoDao{
         return lista;
     }
     
-    
-
     @Override
     public ArrayList<Produto> checarProduto(String valor) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -151,5 +151,32 @@ public class ProdutoDaoImpl implements ProdutoDao{
        catch(Exception ex){
            throw new RuntimeException("Erro ao inserir no banco: ", ex);
        }
+    }
+
+    @Override
+    public ArrayList<ItemComprado> listarCompras() {
+        
+        String sql = "select p.descricao_produto,c.quantidade_compra, preco_produto from produto p join compra c on p.codigo_produto = c.id_compra;";
+        
+        ArrayList<ItemComprado> listaItemCompras = new ArrayList<>();
+        
+        try{
+            st = con.createStatement();
+            rs = st.executeQuery(sql);
+            
+            while(rs.next()){
+               
+                ItemComprado compra = new ItemComprado();
+                compra.setDescricao(rs.getString("descricao_produto"));
+                compra.setQuantidade_comprada(rs.getInt("quantidade_compra"));
+                compra.setPreco(rs.getInt("preco_produto"));
+                
+                listaItemCompras.add(compra);
+            }   
+        }
+        catch(Exception ex){
+            throw new RuntimeException("Erro ao listar produtos do banco: ", ex);
+        }
+        return listaItemCompras;
     }
  }

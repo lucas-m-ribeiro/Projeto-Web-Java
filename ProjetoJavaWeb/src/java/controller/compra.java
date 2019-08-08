@@ -43,7 +43,7 @@ public class compra extends HttpServlet {
 
             prd.comprar(compra);
 
-            response.sendRedirect("/jsp/compra.jsp");   
+            response.sendRedirect("/jsp/produtosComprados.jsp");   
         }
     }
 
