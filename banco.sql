@@ -10,11 +10,16 @@ create table produto(
 	quantidade_produto int (100) not null,
 	preco_produto double(15,2));
 		
-create table venda(
-
-	id_venda int(10) not null auto_increment,
+create table compra(
+	id_compra int(10) not null auto_increment,
 	produto_id int (10) not null,
-	quantidade_venda int(10) not null,
-	primary key (id_venda),
+	quantidade_compra int(10) not null,
+	primary key (id_compra),
 	FOREIGN KEY(produto_id) references produto(codigo_produto)
 );
+
+
+select * from produto p join compra c on p.codigo_produto = c.id_compra;
+
+
+select p.quantidade_produto, preco_produto from produto p join compra c on p.codigo_produto = c.id_compra;

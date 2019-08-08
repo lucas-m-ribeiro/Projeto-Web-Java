@@ -6,6 +6,7 @@
 package dao;
 
 import java.util.ArrayList;
+import model.Compra;
 import model.Produto;
 
 /**
@@ -18,6 +19,7 @@ public interface ProdutoDao {
     public ArrayList <Produto> checarProduto(String valor);
     public void update (Produto produto);
     public void delete(int valor);
+    public void comprar(Compra compra);
     public ArrayList <Produto> listarTodos();
     public ArrayList<Produto> listarTodosDescricao(String valor);  
 }

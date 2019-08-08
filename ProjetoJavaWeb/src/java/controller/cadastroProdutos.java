@@ -32,13 +32,12 @@ public class cadastroProdutos extends HttpServlet {
           Produto produto = new Produto();
           ProdutoDaoImpl prd = new ProdutoDaoImpl();
           
-          if(request.getParameter("descricao").equals("") || request.getParameter("quantidade").equals("") || request.getParameter("preco").equals("") ){
-              response.sendRedirect("/jsp/cadastroProdutos.jsp");   
+          if(request.getParameter("codigo").equals("") || request.getParameter("quantidade").equals("")){
+              response.sendRedirect("/jsp/tabelaProdutos.jsp");   
           }
           else{
-            produto.setDescricao_produto(request.getParameter("descricao"));
+            produto.setCodigo_produto(Integer.parseInt(request.getParameter("codigo")));
             produto.setQuantidade_produto(Integer.parseInt(request.getParameter("quantidade")));
-            produto.setPreco_produto(Double.parseDouble(request.getParameter("preco")));
 
             prd.create(produto);
 

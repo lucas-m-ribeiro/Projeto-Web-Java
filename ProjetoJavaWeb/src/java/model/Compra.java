@@ -9,11 +9,10 @@ package model;
  *
  * @author Lucas Ribeiro
  */
-public class Produto {
-
+public class Compra {
+    
     private int codigo_produto;
-    private String descricao_produto;
-    private double preco_produto;
+    private int codigo_da_compra;
     private int quantidade_produto;
 
     public int getCodigo_produto() {
@@ -24,20 +23,12 @@ public class Produto {
         this.codigo_produto = codigo_produto;
     }
 
-    public String getDescricao_produto() {
-        return descricao_produto;
+    public int getCodigo_da_compra() {
+        return codigo_da_compra;
     }
 
-    public void setDescricao_produto(String descricao_produto) {
-        this.descricao_produto = descricao_produto;
-    }
-
-    public double getPreco_produto() {
-        return preco_produto;
-    }
-
-    public void setPreco_produto(double preco_produto) {
-        this.preco_produto = preco_produto;
+    public void setCodigo_da_compra(int codigo_da_compra) {
+        this.codigo_da_compra = codigo_da_compra;
     }
 
     public int getQuantidade_produto() {
@@ -47,6 +38,4 @@ public class Produto {
     public void setQuantidade_produto(int quantidade_produto) {
         this.quantidade_produto = quantidade_produto;
     }
-
- 
 }

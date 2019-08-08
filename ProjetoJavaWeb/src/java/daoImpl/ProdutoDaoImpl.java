@@ -11,6 +11,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
+import model.Compra;
 import model.Produto;
 
 /**
@@ -127,9 +128,28 @@ public class ProdutoDaoImpl implements ProdutoDao{
         }
         return lista;
     }
+    
+    
 
     @Override
     public ArrayList<Produto> checarProduto(String valor) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-}
+
+    @Override
+    public void comprar(Compra compra) {
+        
+        String sql = "INSERT INTO compra(produto_id, quantidade_compra) VALUES(?,?) ";
+
+       try{
+           pst = con.prepareStatement(sql);
+           pst.setInt(1, compra.getCodigo_produto());
+           pst.setInt(2, compra.getQuantidade_produto());
+           pst.execute();
+           pst.close();    
+       }
+       catch(Exception ex){
+           throw new RuntimeException("Erro ao inserir no banco: ", ex);
+       }
+    }
+ }
