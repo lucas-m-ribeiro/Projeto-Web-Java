@@ -1,3 +1,4 @@
+<%@page import="com.sun.xml.internal.ws.api.message.saaj.SAAJFactory"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="daoImpl.ProdutoDaoImpl"%>
 <%@page import="model.Produto"%>
@@ -44,6 +45,7 @@
                             ArrayList<Produto> lista = prd.listarTodos();
                             
                             for(int i = 0; i < lista.size(); i++){
+                                System.out.println("Quantidade : "+ lista.get(i).getQuantidade_produto());
                     %>
                     <tr>
                         <th><%=lista.get(i).getCodigo_produto()%></th>
@@ -51,7 +53,7 @@
                         <th><%=lista.get(i).getQuantidade_produto()%></th>
                         <th><%=lista.get(i).getPreco_produto()%></th>
                         
-                        <th><a href='alterarProdutos.jsp?codigo=<%=lista.get(i).getCodigo_produto()%>"&descricao=<%=lista.get(i).getDescricao_produto()%>"&quantidade<%=lista.get(i).getQuantidade_produto()%>"&preco=<%=lista.get(i).getPreco_produto()%>" '>Alterar</a></th>
+                        <th><a href='/jsp/alterarProdutos.jsp?codigo=<%=lista.get(i).getCodigo_produto()%>"&descricao=<%=lista.get(i).getDescricao_produto()%>"&quantidade=<%=lista.get(i).getQuantidade_produto()%>"&preco=<%=lista.get(i).getPreco_produto()%>"'>Alterar</a></th>
                         <th><a href='excluir.jsp?codigo=<%=lista.get(i).getCodigo_produto()%>"&descricao=<%=lista.get(i).getDescricao_produto()%>"'>Excluir</a></th>
                         <th><a href='?codigo=<%=lista.get(i).getCodigo_produto()%>"&descricao=<%=lista.get(i).getDescricao_produto()%>"'>Comprar</a></th>
                     </tr>

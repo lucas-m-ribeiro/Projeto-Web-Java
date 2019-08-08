@@ -50,13 +50,14 @@ public class ProdutoDaoImpl implements ProdutoDao{
     //update
     @Override
     public void update (Produto produto){
-        String sql = "UPDATE produto SET descricao_produto = ?, preco_produto = ? WHERE codigo_produto = ? ";
+        String sql = "UPDATE produto SET descricao_produto = ?, quantidade_produto = ?, preco_produto = ? WHERE codigo_produto = ? ";;
 
         try{
             pst = con.prepareStatement(sql);
             pst.setString(1, produto.getDescricao_produto());
-            pst.setDouble(2, produto.getPreco_produto());
-            pst.setInt(3, produto.getCodigo_produto());
+            pst.setInt(2, produto.getQuantidade_produto());
+            pst.setDouble(3, produto.getPreco_produto());
+            pst.setInt(4, produto.getCodigo_produto());
             pst.execute();
             pst.close();
         }
@@ -93,6 +94,7 @@ public class ProdutoDaoImpl implements ProdutoDao{
                 Produto produto = new Produto();
                 produto.setCodigo_produto(rs.getInt("codigo_produto"));
                 produto.setDescricao_produto(rs.getString("descricao_produto"));
+                produto.setQuantidade_produto(rs.getInt("quantidade_produto"));
                 produto.setPreco_produto(rs.getDouble("preco_produto"));
                 lista.add(produto);
             }   

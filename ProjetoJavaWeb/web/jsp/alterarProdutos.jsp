@@ -16,7 +16,7 @@
         <div class="container">
             <h2>Alterar produtos</h2>
         
-            <form action="/alterar" method="POST">
+            <form action="/alterarProdutos" method="POST">
             
             <div class="form-group">
                 <label>Codigo</label>
@@ -27,10 +27,15 @@
                 <label>Descricao:</label>
                 <input type="text" class="form-control col-sm-5" placeholder="Digite a descricao:" name="descricao" value="<%=request.getParameter("descricao")%>">
             </div>
+            
+            <div class="form-group">
+                <label>Quantidade</label>
+                <input type="text" class="form-control col-sm-5" placeholder="Digite a descricao:" name="quantidade" value="<%=request.getParameter("quantidade")%>">
+            </div>
                 
             <div class="form-group">
                 <label>Preco:</label>
-                <input type="number" class="" placeholder="Digite preco:" name="preco" value="<%=request.getParameter("preco")%>">
+                <input type="text" class="" placeholder="Digite preco:" name="preco" value="<%=request.getParameter("preco")%>">
             </div>
            
             <button type="submit" class="btn btn-success">Alterar produto</button>
