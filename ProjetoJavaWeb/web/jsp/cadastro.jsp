@@ -5,41 +5,41 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    
-       <body>
- 
-        <h2>Cadastre-se</h2>
 
-        <form action="/cadastro" method="POST">
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Cadastro</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>
+  <div class="container" >
+    <a class="links" id="paracadastro"></a>
+    <a class="links" id="paralogin"></a>
+     
+   <div id="cadastro">
+    <form method="post" action="/cadastro"> 
+      <h1>Cadastro</h1> 
+
+      <p> 
+        <label for="nome_cad">Nome</label>
+        <input id="nome_cad" name="nome" required="required" type="text" placeholder="nome" />
+      </p>
+
+      <p> 
+        <label for="email_cad">Senha</label>
+        <input id="email_cad" name="senha" required="required" type="password" placeholder="senha"/> 
+      </p>
+
+      <p> 
+        <input type="submit" value="Cadastrar"/> 
+      </p>
           
-          Usuario:<br>
-          <input type="text" name="nome" value="" required="required">
-          <br>
-          
-          Senha:<br>
-          <input type="password" name="senha" value="" required="required">
-          
-          <br><br>
-          <input type="submit" value="cadastrar">
         </form>
-        
-        <!--
-        <p class="text-center mt-3">
-           <a id="cadastro" href="/index">Voltar para login</a>
-        </p>
-        -->
-        <script>
-            var cadastrou = <%= request.getAttribute("statusCadastro")%>
-            if(cadastrou){
-                alert("Cadastrado com Sucesso!");
-            }
-        </script>
-        
-    </body>
-</html>
+      </div>
+    </div>
+</body>
+

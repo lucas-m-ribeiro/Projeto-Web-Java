@@ -36,7 +36,7 @@ public class home extends HttpServlet {
              response.sendRedirect("/");
          }
          else{
-         rd = request.getRequestDispatcher("/jsp/testeLogado.jsp");
+         rd = request.getRequestDispatcher("/jsp/tabelaProdutos.jsp");
         
          try{
             rd.forward(request, response);
