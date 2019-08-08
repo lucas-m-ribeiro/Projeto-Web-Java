@@ -8,6 +8,9 @@ package controller;
 import dao.UsuarioDao;
 import daoImpl.UsuarioDaoImpl;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -52,5 +55,17 @@ public class cadastro extends HttpServlet {
             request.setAttribute("erroNoCadastro", 1);
             response.sendRedirect("/cadastro");
        }
+    }
+    
+     protected void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException, IOException, IOException{
+        
+        RequestDispatcher rd;
+            
+        rd = request.getRequestDispatcher("/jsp/cadastro.jsp");
+        try{
+            rd.forward(request, response);
+        } catch (IOException ex) {
+            Logger.getLogger(cadastro.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }

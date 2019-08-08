@@ -13,5 +13,22 @@
     </head>
     <body>
         <h1>parabens o login esta funcionando!</h1>
+        
+        
+        <h2>Bem Vindo</h2>
+
+        <form action="/logout" method="GET">
+          
+          <br><br>
+          <input type="submit" value="sair">
+        </form>
+
+        
+        
+        
+        
+        
+        
+        
     </body>
 </html>

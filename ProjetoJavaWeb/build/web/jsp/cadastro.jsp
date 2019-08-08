@@ -19,20 +19,21 @@
         <form action="/cadastro" method="POST">
           
           Usuario:<br>
-          <input type="text" name="nome" value="">
+          <input type="text" name="nome" value="" required="required">
           <br>
           
           Senha:<br>
-          <input type="password" name="senha" value="">
+          <input type="password" name="senha" value="" required="required">
           
           <br><br>
           <input type="submit" value="cadastrar">
         </form>
         
+        <!--
         <p class="text-center mt-3">
            <a id="cadastro" href="/index">Voltar para login</a>
         </p>
-        
+        -->
         <script>
             var cadastrou = <%= request.getAttribute("statusCadastro")%>
             if(cadastrou){

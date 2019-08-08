@@ -21,23 +21,22 @@ import model.Usuario;
  *
  * @author Lucas Ribeiro
  */
-@WebServlet(name = "login", urlPatterns = {"/login"})
+@WebServlet(name = "Login", urlPatterns = {"/login"})
 public class login extends HttpServlet {
-    
+
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        
-        ServletContext sc = request.getServletContext();
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, ServletException, ServletException, ServletException, IOException{
+      
+         ServletContext sc = request.getServletContext();
          
-        //pega o valor inserido no pelo usuario formulario
+        //pega o valor inserido no formulario
          String nome = request.getParameter("nome");
          String senha = request.getParameter("senha");
          
          UsuarioDaoImpl UdaoImpl = new UsuarioDaoImpl();
          Usuario u = new Usuario();
          
-        //seta o valor inserido pelo usuario no formulario
+         //seta o valor do formulario na variavel
          u.setNome(nome);
          u.setSenha(senha);
          
@@ -46,11 +45,11 @@ public class login extends HttpServlet {
          if(UdaoImpl.findByNomeUsuario(u) == true){
              HttpSession sessao = request.getSession();
              sessao.setAttribute("usuario", u);
-             response.sendRedirect("/jsp/testeLogado");
+             response.sendRedirect("/home");
          }
          else{
              request.setAttribute("mensagem", "usuario ou senha invalidos");
              response.sendRedirect("/");
-        }
-    }       
+         }
+    }
 }

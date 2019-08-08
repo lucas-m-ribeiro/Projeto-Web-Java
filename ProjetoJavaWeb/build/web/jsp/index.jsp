@@ -13,20 +13,20 @@
     <body>
         <h2>Bem Vindo</h2>
 
-        <form action="/cadastro" method="POST">
+        <form action="/login" method="POST">
           
           Usuario:<br>
-          <input type="text" name="nome" value="">
+          <input type="text" name="nome" value="" required="required">
           <br>
           
           Senha:<br>
-          <input type="password" name="senha" value="">
+          <input type="password" name="senha" value="" required="required"> 
           
           <br><br>
           <input type="submit" value="login">
         </form>
         
-        <p class="text-center mt-3">Nao possui uma conta? Então
+        <p class="text-center mt-3">
            <a id="cadastro" href="/cadastro">Cadastre-se!</a>
         </p>
     </body>
