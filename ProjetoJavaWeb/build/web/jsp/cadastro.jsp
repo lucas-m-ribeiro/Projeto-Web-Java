@@ -17,11 +17,10 @@
     </head>
     <style>
 
-    <style>
-        body {
-            background-color:darkgrey;
-        }
-    </style>
+    body {
+        background-color:darkgrey;
+    }
+</style>
 
     <body>
 	<div class="container">
