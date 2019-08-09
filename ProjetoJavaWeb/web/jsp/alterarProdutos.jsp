@@ -9,12 +9,19 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Pagina Alterar</title>
+        <title>Alterar</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     </head>
+    
+     <style>
+        body {
+            background-color:ghostwhite;
+        }
+    </style>
     
     <body>
         <div class="container">
-            <h2>Alterar produtos</h2>
+            <h2>Alterar produto</h2>
         
             <form action="/alterarProdutos" method="POST">
             
@@ -35,7 +42,7 @@
                 
             <div class="form-group">
                 <label>Preco:</label>
-                <input type="text" class="" placeholder="Digite preco:" name="preco" value="<%=request.getParameter("preco")%>">
+                <input type="text" class="form-control col-sm-5" placeholder="Digite preco:" name="preco" value="<%=request.getParameter("preco")%>">
             </div>
            
             <button type="submit" class="btn btn-success">Alterar produto</button>

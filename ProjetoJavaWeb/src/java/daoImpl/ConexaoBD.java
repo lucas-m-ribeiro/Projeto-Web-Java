@@ -19,7 +19,7 @@ import java.sql.SQLException;
 public class ConexaoBD {
      
     protected static final String DRIVER = "com.mysql.jdbc.Driver";
-    protected static final String URL = "jdbc:mysql://localhost:3306/java";
+    protected static final String URL = "jdbc:mysql://localhost:3306/estoque";
     protected static final String usuario = "root";
     protected static final String senha = "123456789";
     

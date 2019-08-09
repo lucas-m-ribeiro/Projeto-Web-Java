@@ -130,11 +130,6 @@ public class ProdutoDaoImpl implements ProdutoDao{
         }
         return lista;
     }
-    
-    @Override
-    public ArrayList<Produto> checarProduto(String valor) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
     @Override
     public void comprar(Compra compra) {
@@ -156,7 +151,7 @@ public class ProdutoDaoImpl implements ProdutoDao{
     @Override
     public ArrayList<ItemComprado> listarCompras() {
         
-        String sql = "select p.descricao_produto,c.quantidade_compra, preco_produto from produto p join compra c on p.codigo_produto = c.id_compra;";
+        String sql = "select p.descricao_produto,c.quantidade_compra,p.preco_produto from produto p join compra c on p.codigo_produto=c.produto_id;";
         
         ArrayList<ItemComprado> listaItemCompras = new ArrayList<>();
         

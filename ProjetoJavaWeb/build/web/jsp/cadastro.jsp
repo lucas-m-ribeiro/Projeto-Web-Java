@@ -7,39 +7,50 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
+<html>
+    <head>  
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Cadastro</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+	crossorigin="anonymous" />
+    </head>
+    <style>
 
-<head>
-  <meta charset="UTF-8" />
-  <title>Cadastro</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-  <link rel="stylesheet" type="text/css" href="style.css" />
-</head>
+    <style>
+        body {
+            background-color:darkgrey;
+        }
+    </style>
 
-<body>
-  <div class="container" >
-    <a class="links" id="paracadastro"></a>
-    <a class="links" id="paralogin"></a>
-     
-   <div id="cadastro">
-    <form method="post" action="/cadastro"> 
-      <h1>Cadastro</h1> 
+    <body>
+	<div class="container">
+            <br>
+            <br>
+            <form class="col-md-6 offset-md-3 jumbotron" action="/cadastro" method="POST">
 
-      <p> 
-        <label for="nome_cad">Nome</label>
-        <input id="nome_cad" name="nome" required="required" type="text" placeholder="nome" />
-      </p>
+                <h3>Cadastre-se</h3>
 
-      <p> 
-        <label for="email_cad">Senha</label>
-        <input id="email_cad" name="senha" required="required" type="password" placeholder="senha"/> 
-      </p>
+                <div class="form-group">
+                    <!-- Endereço de email-->
+                    <label>Nome: </label>
+                    <input required= "required" name="nome" type="text" class="form-control" placeholder="Nome">
+                </div>
 
-      <p> 
-        <input type="submit" value="Cadastrar"/> 
-      </p>
-          
-        </form>
-      </div>
-    </div>
-</body>
+                <div class="form-group">
+                    <label>Senha: </label>
+                    <input required= "required" name="senha" type="password" class="form-control" placeholder="Senha">
+                </div>
 
+                <br>
+                <button type="submit" class="btn btn-primary" id="cadastro" onclick="a">Cadastrar</button>
+               <script>
+                    var cadastrou = <%= request.getAttribute("statusCadastro")%>
+                    if(cadastrou){
+                        alert("Cadastrado com Sucesso!");
+                    }
+                </script>
+            </form>
+        </div>
+    </body>
+</html>

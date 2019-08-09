@@ -4,6 +4,39 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
 /* 
-    Created on : 07/08/2019, 21:43:54
+    Created on : 08/08/2019, 22:26:14
     Author     : Lucas Ribeiro
 */
+
+/*pagina inicial*/
+
+body {
+    background-color: ghostwhite
+}
+
+
+<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+</style>

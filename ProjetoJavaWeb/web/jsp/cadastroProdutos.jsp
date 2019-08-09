@@ -9,6 +9,12 @@
         <title>Pagina inserir</title>
     </head>
     
+    <style>
+        body {
+            background-color:ghostwhite;
+        }
+    </style>
+    
     <body>
         <div class="container">
             <h2>Cadastrar produtos</h2>

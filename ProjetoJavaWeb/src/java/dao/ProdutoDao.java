@@ -17,7 +17,6 @@ import model.Produto;
 public interface ProdutoDao {
     
     public void create(Produto produto);
-    public ArrayList <Produto> checarProduto(String valor);
     public void update (Produto produto);
     public void delete(int valor);
     public void comprar(Compra compra);
